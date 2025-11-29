@@ -22,9 +22,9 @@
     "url": "git+https://github.com/bananalasmari/ngx-animations.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/ngx-animations/issues"
+    "url": "https://github.com/bananalasmari/ngx-animations/issues"
   },
-  "homepage": "https://github.com/yourusername/ngx-animations#readme",
+  "homepage": "https://github.com/bananalasmari/ngx-animations.git",
   "peerDependencies": {
     "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0"

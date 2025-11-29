@@ -381,8 +381,8 @@ Inspired by:
 ## 📞 Support
 
 - 📖 [Documentation](./projects/elm/ngx-animations/README.md)
-- 🐛 [Issue Tracker](https://github.com/yourusername/ngx-animations/issues)
-- 💬 [Discussions](https://github.com/yourusername/ngx-animations/discussions)
+- 🐛 [Issue Tracker](https://github.com/bananalasmari/ngx-animations/issues)
+- 💬 [Discussions](https://github.com/bananalasmari/ngx-animations/discussions)
 
 ---
 

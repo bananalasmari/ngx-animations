@@ -198,7 +198,7 @@ import { TypewriterComponent, SlideInDirective } from '@elm/ngx-animations';
 
 - [Full Documentation](./projects/elm/ngx-animations/README.md)
 - [API Reference](./projects/elm/ngx-animations/docs/API.md)
-- [GitHub Issues](https://github.com/yourusername/ngx-animations/issues)
+- [GitHub Issues](https://github.com/bananalasmari/ngx-animations/issues)
 
 ---
 
