@@ -77,7 +77,7 @@ export class AppComponent {}
 | `ngxParallaxScroll` | Smooth parallax scrolling |
 | `ngxRippleClick` | Material Design ripple effect |
 
-### Animation Components (5)
+### Animation Components (4)
 
 | Component | Description |
 |-----------|-------------|
@@ -85,7 +85,6 @@ export class AppComponent {}
 | `<ngx-stagger-list>` | Stagger list item animations |
 | `<ngx-typewriter>` | Typewriter effect with RTL |
 | `<ngx-marquee>` | Continuous scrolling content |
-| `<ngx-orbit-animation>` | Circular orbit animations |
 
 ### Services (1)
 
@@ -102,6 +101,10 @@ export class AppComponent {}
 - **[Complete README](./projects/elm/ngx-animations/README.md)** - Full library documentation
 - **[API Reference](./projects/elm/ngx-animations/docs/API.md)** - Detailed API docs
 - **[Usage Guide](./projects/elm/ngx-animations/docs/USAGE_GUIDE.md)** - Comprehensive examples
+
+### 🤖 AI Assistant Integration
+- **AI Assistant Docs (`src/app/docs/ai-assistant`)**: Ready-to-use prompts for tools like ChatGPT, Claude, or Copilot to generate Angular examples using `@elm/ngx-animations`.
+- **Use with any LLM**: Describe the motion you want (fade on scroll, bounce + rotate, performance tips, interaction-driven slides), then paste one of the provided prompts to get tailored code.
 
 ### 🚀 Publishing & Development
 - **[Publishing Guide](./projects/elm/ngx-animations/docs/PUBLISHING.md)** - How to publish to NPM

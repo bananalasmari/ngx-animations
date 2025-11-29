@@ -5,6 +5,14 @@ All notable changes to @elm/ngx-animations will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2025-11-29
+
+### Changed
+- Updated root README to document the AI assistant prompts and integration.
+- Removed the `OrbitAnimationComponent` from the public component list in the root README to reflect the current recommended set of components.
+
+---
+
 ## [1.0.0] - 2025-11-23
 
 ### Added
