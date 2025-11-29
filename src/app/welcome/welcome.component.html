@@ -1,0 +1,253 @@
+<div class="welcome-page">
+  <!-- Mouse Follower -->
+  @if (showMouseFollower) {
+    <ngx-mouse-follower [size]="40" [dotSize]="8"></ngx-mouse-follower>
+  }
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <p>🎉 New: GSAP-inspired animations now available! <a href="#features">Explore →</a></p>
+  </div>
+
+  <!-- Header -->
+  <header class="header" ngxFadeIn [duration]="800">
+    <div class="header-content">
+      <div class="logo" ngxMagnetic [strength]="0.3" routerLink="/">
+        <span class="logo-text">@elm</span>
+        <span class="logo-accent">ngx-animations</span>
+      </div>
+      
+      <nav class="nav">
+        @if (!isRtl()) {
+          <a href="#features" (click)="scrollToSection('features'); $event.preventDefault()">Features</a>
+          <a routerLink="/docs" (click)="scrollToSection('docs'); $event.preventDefault()">Docs</a>
+          <a routerLink="/demo">Demos</a>
+          <a href="#community" (click)="scrollToSection('community'); $event.preventDefault()">Community</a>
+          <a routerLink="/ai">AI Assistant</a>
+        } @else {
+          <a href="#features" (click)="scrollToSection('features'); $event.preventDefault()">المزايا</a>
+          <a routerLink="/docs"(click)="scrollToSection('docs'); $event.preventDefault()">التوثيق</a>
+          <a routerLink="/demo">العروض</a>
+          <a href="#community" (click)="scrollToSection('community'); $event.preventDefault()">المجتمع</a>
+
+        }
+      </nav>
+
+      <!-- <div class="lang-toggle">
+        <button class="lang-btn" [class.active]="!isRtl()" (click)="setEnglish()">EN</button>
+        <button class="lang-btn" [class.active]="isRtl()" (click)="setArabic()">ع</button>
+      </div> -->
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="233" height="218" viewBox="0 0 233 218" fill="none">
+            <g clip-path="url(#clip0_84_402)">
+              <path d="M88.88 217.25L99.91 210.88V109L11.68 58.03L0.650024 64.4V166.31L88.88 217.25Z" stroke="#0071CE" stroke-width="1.3" stroke-miterlimit="10"/>
+              <path d="M144.03 198.15L155.06 191.78V51.72L66.82 0.75L55.79 7.12V147.2L144.03 198.15Z" stroke="#FF5D36" stroke-width="1.3" stroke-miterlimit="10"/>
+              <path d="M221.23 217.25L232.26 210.88V121.73L121.97 58.03L110.94 64.4V153.57L221.23 217.25Z" stroke="#763CBC" stroke-width="1.3" stroke-miterlimit="10"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_84_402">
+                <rect width="232.91" height="218" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg></span>
+          <span class="title-main">Animate</span>
+          <span class="title-accent">anything</span>
+          <span class="title-dot">✨</span>
+        </h1>
+        
+        <p class="hero-description">
+          @elm/ngx-animations allows you to effortlessly animate anything Angular can touch. 
+          Delivering silky-smooth performance and unmatched RTL support so you can focus on the 
+          <span class="highlight">magic</span>.
+        </p>
+
+        <div class="hero-buttons">
+          <button 
+            class="hero-btn primary" 
+            ngxMagnetic 
+            [strength]="0.5"
+            ngxRippleClick
+            routerLink="/demo">
+            Animate Anything
+          </button>
+          <button 
+            class="hero-btn secondary" 
+            ngxMagnetic 
+            [strength]="0.5"
+            ngxRippleClick
+            routerLink="/demo">
+            That's right, Anything
+          </button>
+        </div>
+
+        <p class="hero-subtext">
+          Whether you're animating UI, creating scroll effects, or building interactive experiences.
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="floating-shape shape-1" ngxPulse [speed]="2000" [scale]="1.1">
+          <div class="shape-inner"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="features-grid">
+      <!-- Scroll Feature -->
+      <ngx-scroll-reveal animation="slide-up" [delay]="0">
+        <div class="feature-card" ngxTilt3d [maxTilt]="10" [glare]="true">
+          <div class="feature-icon scroll-icon">
+            <div class="icon-circle"></div>
+            <div class="icon-line"></div>
+          </div>
+          <h3 class="feature-title purple">Scroll</h3>
+          <p class="feature-description">
+            Turn scrolling into silky-smooth storytelling with parallax and scroll-triggered animations.
+          </p>
+          <button class="feature-btn" ngxMagnetic [strength]="0.3" routerLink="/demo">
+            Explore Scroll →
+          </button>
+        </div>
+      </ngx-scroll-reveal>
+
+      <!-- SVG/Shapes Feature -->
+      <ngx-scroll-reveal animation="slide-up" [delay]="100">
+        <div class="feature-card" ngxTilt3d [maxTilt]="10" [glare]="true">
+          <div class="feature-icon svg-icon">
+            <div class="icon-shape"></div>
+          </div>
+          <h3 class="feature-title orange">Shapes</h3>
+          <p class="feature-description">
+            Move, morph, and transform with bounce, flip, and elastic animations.
+          </p>
+          <button class="feature-btn" ngxMagnetic [strength]="0.3" routerLink="/demo">
+            Explore Shapes →
+          </button>
+        </div>
+      </ngx-scroll-reveal>
+
+      <!-- Text Feature -->
+      <ngx-scroll-reveal animation="slide-up" [delay]="200">
+        <div class="feature-card" ngxTilt3d [maxTilt]="10" [glare]="true">
+          <div class="feature-icon text-icon">
+            <div class="icon-text">
+              <span>24</span>
+              <div class="text-line"></div>
+            </div>
+          </div>
+          <h3 class="feature-title purple">Text</h3>
+          <p class="feature-description">
+            Typewriter, scramble, and reveal text with full RTL support for Arabic and Hebrew.
+          </p>
+          <button class="feature-btn" ngxMagnetic [strength]="0.3" routerLink="/demo">
+            Explore Text →
+          </button>
+        </div>
+      </ngx-scroll-reveal>
+
+      <!-- Interactive Feature -->
+      <ngx-scroll-reveal animation="slide-up" [delay]="300">
+        <div class="feature-card" ngxTilt3d [maxTilt]="10" [glare]="true">
+          <div class="feature-icon interactive-icon">
+            <div class="icon-shape complex"></div>
+          </div>
+          <h3 class="feature-title orange">Interactive</h3>
+          <p class="feature-description">
+            Magnetic buttons, 3D tilts, and mouse followers for premium user experiences.
+          </p>
+          <button class="feature-btn" ngxMagnetic [strength]="0.3" routerLink="/demo">
+            Explore Interactive →
+          </button>
+        </div>
+      </ngx-scroll-reveal>
+    </div>
+
+    <!-- Client Logos -->
+    <div class="clients-section">
+      <div class="clients-logos">
+        <div class="client-logo">Angular</div>
+        <div class="client-logo">TypeScript</div>
+        <div class="client-logo">Open Source</div>
+        <div class="client-logo">Community</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <!-- <div class="newsletter-section">
+        <h3>Keep in the loop with @elm/ngx-animations newsletter.</h3>
+        <div class="newsletter-form">
+          <input 
+            type="email" 
+            placeholder="Email address"
+            [(ngModel)]="email"
+            class="newsletter-input">
+          <button 
+            class="newsletter-btn" 
+            ngxMagnetic 
+            [strength]="0.3"
+            ngxRippleClick
+            (click)="subscribe()">
+            Subscribe
+          </button>
+        </div>
+      </div> -->
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>@elm/ngx-animations</h4>
+          <a routerLink="/demo">Demos</a>
+          <a href="#docs">Docs</a>
+          <a href="#features">Features</a>
+          <a href="#showcase">Showcase</a>
+          <a
+            href="https://www.npmjs.com/package/elm-ngx-animations"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NPM Package
+          </a>
+        </div>
+        <!-- <div class="footer-column">
+          <h4>Learn</h4>
+          <a routerLink="/demo">Get Started</a>
+          <a href="#docs">Tutorials</a>
+          <a href="#docs">API Reference</a>
+          <a href="#community">Community</a>
+        </div>
+        <div class="footer-column">
+          <h4>Community</h4>
+          <a href="#showcase">Showcase</a>
+          <a href="#community">GitHub</a>
+          <a href="#community">Discord</a>
+          <a href="#community">Twitter</a>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+        </div> -->
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 @elm/ngx-animations. All rights reserved.</p>
+        <p class="made-with">Made with ❤️ for ELM Angular developers</p>
+      </div>
+    </div>
+  </footer>
+</div>
+

@@ -1,0 +1,55 @@
+<div class="profile-grid-container">
+  @if (enableStagger && !enableScrollReveal) {
+    <ngx-stagger-list
+      [animation]="staggerAnimation"
+      [staggerDelay]="staggerDelay"
+      [triggerOnScroll]="true">
+      <div class="profile-grid" [style]="gridStyle">
+        @for (profile of profiles; track profile.id || $index) {
+          <ngx-profile-card
+            [name]="profile.name"
+            [username]="profile.username"
+            [jobTitle]="profile.jobTitle"
+            [gradient]="profile.gradient"
+            [icon]="profile.icon || '👤'"
+            [iconSvg]="profile.iconSvg"
+            [stats]="profile.stats">
+          </ngx-profile-card>
+        }
+      </div>
+    </ngx-stagger-list>
+  } @else if (enableScrollReveal) {
+    <div class="profile-grid" [style]="gridStyle">
+      @for (profile of profiles; track profile.id || $index) {
+        <ngx-scroll-reveal
+          animation="scale"
+          [delay]="$index * 50">
+          <ngx-profile-card
+            [name]="profile.name"
+            [username]="profile.username"
+            [jobTitle]="profile.jobTitle"
+            [gradient]="profile.gradient"
+            [icon]="profile.icon || '👤'"
+            [iconSvg]="profile.iconSvg"
+            [stats]="profile.stats">
+          </ngx-profile-card>
+        </ngx-scroll-reveal>
+      }
+    </div>
+  } @else {
+    <div class="profile-grid" [style]="gridStyle">
+      @for (profile of profiles; track profile.id || $index) {
+        <ngx-profile-card
+          [name]="profile.name"
+          [username]="profile.username"
+          [jobTitle]="profile.jobTitle"
+          [gradient]="profile.gradient"
+          [icon]="profile.icon || '👤'"
+            [iconSvg]="profile.iconSvg"
+            [stats]="profile.stats">
+        </ngx-profile-card>
+      }
+    </div>
+  }
+</div>
+

@@ -1,0 +1,169 @@
+:host {
+  display: block;
+  /* margin-bottom: 2.5rem; */
+}
+
+.ai-section {
+  padding: 1.75rem 1.5rem 2rem;
+   margin-top: 2.5rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(118, 60, 188, 0.45), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(255, 93, 54, 0.55), transparent 55%),
+    rgba(15, 23, 42, 0.98);
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.7),
+    0 0 0 1px rgba(148, 163, 184, 0.35);
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ai-title h2 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.ai-pill {
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(248, 250, 252, 0.45);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e2e8f0;
+}
+
+.ai-hero-icon {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 8px 24px rgba(15, 23, 42, 0.9));
+}
+
+
+
+.ai-card {
+  margin-bottom: 3rem;
+  background: rgba(15, 23, 42, 0.98);
+  border-radius: 14px;
+  padding: 1.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  font-size: 0.9rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.ai-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+  border-color: rgba(250, 250, 250, 0.6);
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.08), transparent 55%),
+    rgba(15, 23, 42, 1);
+}
+
+.ai-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  font-size: 1.05rem;
+}
+
+.ai-card p {
+  margin: 0.3rem 0;
+}
+
+.ai-prompt-card pre {
+  background: rgb(5 29 73);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  border: 1px solid rgba(55, 65, 81, 0.85);
+}
+
+.ai-prompt-card code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+}
+
+.ai-prompt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.ai-prompt-description {
+  font-size: 0.82rem;
+  color: #cbd5f5;
+}
+
+.ai-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e2e8f0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.ai-copy-btn:hover {
+  background: rgba(30, 64, 175, 0.8);
+  border-color: rgba(248, 250, 252, 0.9);
+  transform: translateY(-1px);
+}
+
+.ai-copy-icon {
+  width: 14px;
+  height: 14px;
+  fill: #e2e8f0;
+}
+
+.ai-copy-success {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: #bbf7d0;
+}
+
+@media (max-width: 768px) {
+  .ai-section {
+    padding: 1.3rem 1.1rem 1.6rem;
+  }
+
+  .ai-title h2 {
+    font-size: 1.45rem;
+  }
+
+  .ai-hero-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+

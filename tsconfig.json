@@ -3,6 +3,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@elm/ngx-animations": [
+        "./dist/elm/ngx-animations"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -28,6 +33,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/elm/ngx-animations/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/elm/ngx-animations/tsconfig.spec.json"
     }
   ]
 }

@@ -1,0 +1,300 @@
+<app-sub-header></app-sub-header>
+
+<div class="docs-page">
+  <header class="docs-header">
+    <h1>@elm/ngx-animations – Documentation</h1>
+    <p class="tagline">
+      Quick HTML docs for each animation directive, component, and service.
+    </p>
+    <nav class="docs-nav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/demo">Demo</a>
+    </nav>
+  </header>
+
+  <main class="docs-content">
+    <!-- Install & Quick Example -->
+    <section id="install">
+      <h2>Install &amp; Quick Start</h2>
+      <div class="docs-grid">
+        <article class="docs-card">
+          <div class="install-header">
+            <h3>Install</h3>
+            <button
+              type="button"
+              class="copy-btn"
+              (click)="copyToClipboard('npm install elm-ngx-animations')"
+              aria-label="Copy install command"
+            >
+              <svg
+                class="copy-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="9" y="9" width="11" height="11" rx="2" ry="2"></rect>
+                <rect x="4" y="4" width="11" height="11" rx="2" ry="2"></rect>
+              </svg>
+            </button>
+          </div>
+          @if (copied) {
+            <p class="copy-success">Command copied!</p>
+          }
+          <p>Install the library in your Angular project:</p>
+          <pre><code ngNonBindable>npm install elm-ngx-animations</code></pre>
+        </article>
+
+        <article class="docs-card">
+          <h3>Standalone Component Example</h3>
+          <p>Minimal setup using standalone components (Angular 16+):</p>
+          <pre><code ngNonBindable>import &#123; Component &#125; from '@angular/core';
+import &#123;
+  FadeInDirective,
+  SlideInDirective,
+  ScaleInDirective,
+  RotateInDirective
+&#125; from 'elm-ngx-animations';
+
+&#64;Component(&#123;
+  selector: 'app-animations-demo',
+  standalone: true,
+  templateUrl: './animations-demo.component.html',
+  imports: [
+    FadeInDirective,
+    SlideInDirective,
+    ScaleInDirective,
+    RotateInDirective
+  ]
+&#125;)
+export class AnimationsDemoComponent &#123;&#125;</code></pre>
+        </article>
+
+        <article class="docs-card">
+          <h3>Template Example</h3>
+          <p>Use the directives directly in your HTML:</p>
+          <pre><code ngNonBindable>&lt;div ngxFadeIn [duration]="600" [triggerOnScroll]="true"&gt;
+  Fade Animation
+&lt;/div&gt;
+
+&lt;div ngxSlideIn [direction]="'left'" [duration]="600" [triggerOnScroll]="true"&gt;
+  Slide from Left
+&lt;/div&gt;</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <!-- Directives -->
+    <section id="install">
+      <h2>Directives</h2>
+
+      <div class="docs-grid">
+        <!-- FadeIn -->
+        <article class="docs-card" id="fadein">
+          <h3>ngxFadeIn</h3>
+          <p><strong>Selector:</strong> <code>[ngxFadeIn]</code></p>
+          <p>Smooth fade in/out animation. Supports scroll‑triggered entrance.</p>
+          <ul>
+            <li><code>duration</code> (ms, default <code>600</code>)</li>
+            <li><code>delay</code> (ms)</li>
+            <li><code>direction</code>: <code>'in' | 'out' | 'in-out'</code></li>
+            <li><code>triggerOnScroll</code>, <code>threshold</code></li>
+          </ul>
+          <pre><code>&lt;div ngxFadeIn [duration]="500"&gt;Content&lt;/div&gt;</code></pre>
+        </article>
+
+        <!-- SlideIn -->
+        <article class="docs-card" id="slidein">
+          <h3>ngxSlideIn</h3>
+          <p><strong>Selector:</strong> <code>[ngxSlideIn]</code></p>
+          <p>Slides elements from any side with RTL awareness.</p>
+          <ul>
+            <li><code>direction</code>: <code>'left' | 'right' | 'top' | 'bottom'</code></li>
+            <li><code>distance</code> (px)</li>
+            <li><code>rtl</code> (force RTL if needed)</li>
+          </ul>
+          <pre><code>&lt;div ngxSlideIn direction="left"&gt;Slides in&lt;/div&gt;</code></pre>
+        </article>
+
+        <!-- ScaleIn -->
+        <article class="docs-card" id="scalein">
+          <h3>ngxScaleIn</h3>
+          <p><strong>Selector:</strong> <code>[ngxScaleIn]</code></p>
+          <p>Scales elements from a chosen transform origin.</p>
+          <ul>
+            <li><code>startScale</code>, <code>endScale</code></li>
+            <li><code>origin</code>: <code>'center' | 'top-left' | ...</code></li>
+          </ul>
+          <pre><code>&lt;div ngxScaleIn [startScale]="0.5"&gt;Scale in&lt;/div&gt;</code></pre>
+        </article>
+
+        <!-- RotateIn -->
+        <article class="docs-card" id="rotatein">
+          <h3>ngxRotateIn</h3>
+          <p><strong>Selector:</strong> <code>[ngxRotateIn]</code></p>
+          <p>3D rotation on X/Y/Z axis.</p>
+          <ul>
+            <li><code>axis</code>: <code>'x' | 'y' | 'z'</code></li>
+            <li><code>degrees</code> (default 180)</li>
+          </ul>
+          <pre><code>&lt;div ngxRotateIn axis="y" [degrees]="90"&gt;&lt;/div&gt;</code></pre>
+        </article>
+
+        <!-- BounceIn -->
+        <article class="docs-card" id="bouncein">
+          <h3>ngxBounceIn</h3>
+          <p>Bouncy entrance animation for cards.</p>
+          <pre><code>&lt;div ngxBounceIn direction="up"&gt;Bouncy card&lt;/div&gt;</code></pre>
+        </article>
+
+        <!-- FlipIn -->
+        <article class="docs-card" id="flipin">
+          <h3>ngxFlipIn</h3>
+          <p>3D flip card effect (horizontal/vertical/diagonal).</p>
+          <pre><code>&lt;div ngxFlipIn axis="horizontal"&gt;Flip me&lt;/div&gt;</code></pre>
+        </article>
+
+        <!-- HoverLift -->
+        <article class="docs-card" id="hoverlift">
+          <h3>ngxHoverLift</h3>
+          <p>Utility hover effect (scale + shadow) for cards &amp; buttons.</p>
+          <pre><code>&lt;div class="card" ngxHoverLift&gt;Hover card&lt;/div&gt;</code></pre>
+        </article>
+
+        <!-- CountUp -->
+        <article class="docs-card" id="countup">
+          <h3>ngxCountUp</h3>
+          <p>Animated number counter for stats and KPIs.</p>
+          <pre><code>&lt;span ngxCountUp [end]="2500" [duration]="1200"&gt;&lt;/span&gt;</code></pre>
+        </article>
+
+        <!-- Magnetic -->
+        <article class="docs-card" id="magnetic">
+          <h3>ngxMagnetic</h3>
+          <p>Magnetic hover that pulls toward the cursor.</p>
+          <pre><code>&lt;button ngxMagnetic [strength]="0.5"&gt;Hover me&lt;/button&gt;</code></pre>
+        </article>
+
+        <!-- Tilt3d -->
+        <article class="docs-card" id="tilt3d">
+          <h3>ngxTilt3d</h3>
+          <p>3D tilt card with optional glare overlay.</p>
+          <pre><code>&lt;div ngxTilt3d [maxTilt]="15" [glare]="true"&gt;3D Card&lt;/div&gt;</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <!-- Components -->
+    <section id="install">
+      <h2>Components</h2>
+      <div class="docs-grid">
+        <article class="docs-card" id="scrollreveal">
+          <h3>&lt;ngx-scroll-reveal&gt;</h3>
+          <p>Reveal content on scroll with multiple animation presets.</p>
+          <pre><code>&lt;ngx-scroll-reveal animation="slide-up"&gt;...&lt;/ngx-scroll-reveal&gt;</code></pre>
+        </article>
+
+        <article class="docs-card" id="staggerlist">
+          <h3>&lt;ngx-stagger-list&gt;</h3>
+          <p>Stagger animations for lists of items.</p>
+          <pre><code>&lt;ngx-stagger-list [staggerDelay]="120"&gt;...&lt;/ngx-stagger-list&gt;</code></pre>
+        </article>
+
+        <article class="docs-card" id="typewriter">
+          <h3>&lt;ngx-typewriter&gt;</h3>
+          <p>Typewriter text, supports Arabic with <code>[rtl]</code>.</p>
+          <pre><code>&lt;ngx-typewriter [text]="'مرحبا بكم'" [rtl]="true"&gt;&lt;/ngx-typewriter&gt;</code></pre>
+        </article>
+
+        <article class="docs-card" id="marquee">
+          <h3>&lt;ngx-marquee&gt;</h3>
+          <p>Continuous scrolling text/content with LTR &amp; RTL modes.</p>
+        </article>
+
+        <article class="docs-card" id="confetti">
+          <h3>&lt;ngx-confetti&gt;</h3>
+          <p>Full‑screen confetti explosion triggered from any action.</p>
+        </article>
+
+        <article class="docs-card" id="profiles">
+          <h3>&lt;ngx-profile-card&gt;</h3>
+          <p>Glass profile cards with gradients, stats and Arabic/RTL support.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Patterns -->
+    <section id="patterns">
+      <h2>Patterns</h2>
+      <div class="docs-grid">
+        <article class="docs-card" id="stacked-cards">
+          <h3>Scrollable Stacked Cards</h3>
+          <p>
+            Layered, scrollable cards that stack on top of each other using
+            <code>ngxParallaxScroll</code> and <code>ngxFadeIn</code>.
+          </p>
+          <p>
+            Ideal for storytelling, onboarding flows, feature walkthroughs, or case studies where
+            each scroll step reveals the next “chapter” of the story.
+          </p>
+          <p><strong>Key ideas:</strong></p>
+          <ul>
+            <li>Use a <code>position: sticky</code> card inside a tall container to create stacking.</li>
+            <li>
+              Apply <code>ngxParallaxScroll</code> on a wrapper element for subtle depth and
+              different speeds per card.
+            </li>
+            <li>
+              Add <code>ngxFadeIn</code> on the content area so cards fade in as they enter the
+              viewport.
+            </li>
+            <li>Toggle an <code>expanded</code> class on click to reveal more details.</li>
+          </ul>
+          <pre><code ngNonBindable>&lt;div class="stacked-cards-container"&gt;
+  &#64;for (card of stackedCards; track card.id; let i = $index) &#123;
+    &lt;div class="stacked-card-wrapper"
+         ngxParallaxScroll
+         [speed]="0.15 + i * 0.08"&gt;
+      &lt;article class="stacked-card"
+               [class.expanded]="expandedId === card.id"
+               (click)="toggle(card.id)"&gt;
+        &lt;div class="stacked-card-body"
+             ngxFadeIn
+             [triggerOnScroll]="true"&gt;
+          &lt;h3&gt;&#123;&#123; card.title &#125;&#125;&lt;/h3&gt;
+          &lt;p&gt;&#123;&#123; card.description &#125;&#125;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+    &#125;
+  &#125;
+&lt;/div&gt;</code></pre>
+          <p>
+            See the <strong>Demo → Scrollable Stacked Cards</strong> section for a fully wired
+            example with CTA buttons and expanded detail state.
+          </p>
+        </article>
+      </div>
+    </section>
+
+  
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Services</h2>
+      <div class="docs-grid">
+        <article class="docs-card" id="timeline">
+          <h3>TimelineService</h3>
+          <p>GSAP‑like API for chaining animations.</p>
+          <pre><code>const tl = timeline.create().to(el, &#123; opacity: '1' &#125;, 500);</code></pre>
+        </article>
+
+        <article class="docs-card" id="rtlservice">
+          <h3>RtlLanguageService</h3>
+          <p>Toggle between English/Arabic and LTR/RTL at runtime.</p>
+          <pre><code>rtl.setLocale('ar'); // RTL + Arabic</code></pre>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+
+

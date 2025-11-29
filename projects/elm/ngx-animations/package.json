@@ -1,0 +1,33 @@
+{
+  "name": "elm-ngx-animations",
+  "version": "1.0.1",
+  "description": "Next-level animation library for Angular - Production-ready, lightweight, high-performance",
+  "keywords": [
+    "angular",
+    "animation",
+    "animations",
+    "gsap",
+    "motion",
+    "transitions",
+    "rtl",
+    "arabic",
+    "typescript",
+    "standalone",
+    "components"
+  ],
+  "author": "elm By Banan Aladmari",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ngx-animations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ngx-animations/issues"
+  },
+  "homepage": "https://github.com/yourusername/ngx-animations#readme",
+  "peerDependencies": {
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0"
+  },
+  "sideEffects": false
+}

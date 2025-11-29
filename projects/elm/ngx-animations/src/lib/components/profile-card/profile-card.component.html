@@ -1,0 +1,52 @@
+<div 
+  class="profile-card"
+  [ngClass]="cardClasses"
+  [style.--profile-gradient]="gradient">
+  
+  <div class="card-content">
+    <!-- Icon -->
+    <div class="card-icon" [style.background]="gradient">
+      @if (iconSvg) {
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+          <path [attr.d]="iconSvg" fill="currentColor"/>
+        </svg>
+      } @else {
+        <span class="icon-emoji">{{ icon }}</span>
+      }
+    </div>
+
+    <!-- Name (Arabic) -->
+    <h3 class="card-name">{{ name }}</h3>
+
+    <!-- Username (English) -->
+    <p class="card-username">{{ username }}</p>
+
+    <!-- Job Title (Arabic) -->
+    <p class="card-job">{{ jobTitle }}</p>
+
+    <!-- Stats -->
+    @if (showStats && stats) {
+      <div class="card-stats">
+        @if (stats.documents !== undefined) {
+          <div class="stat-item">
+            <span class="stat-icon">📄</span>
+            <span class="stat-value">{{ stats.documents }}</span>
+          </div>
+        }
+        @if (stats.views !== undefined) {
+          <div class="stat-item">
+            <span class="stat-icon">👁️</span>
+            <span class="stat-value">{{ stats.views }}</span>
+          </div>
+        }
+        @if (stats.links !== undefined) {
+          <div class="stat-item">
+            <span class="stat-icon">🔗</span>
+            <span class="stat-value">{{ stats.links }}</span>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>
+

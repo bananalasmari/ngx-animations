@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "94662f86-6e15-4da5-a9f8-93b7433c1292"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -71,6 +72,32 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "@elm/ngx-animations": {
+      "projectType": "library",
+      "root": "projects/elm/ngx-animations",
+      "sourceRoot": "projects/elm/ngx-animations/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/elm/ngx-animations/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/elm/ngx-animations/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/elm/ngx-animations/tsconfig.spec.json"
+          }
         }
       }
     }

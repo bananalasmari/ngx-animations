@@ -1,0 +1,28 @@
+.profile-grid-container {
+  width: 100%;
+}
+
+.profile-grid {
+  display: grid;
+  width: 100%;
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+  .profile-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+

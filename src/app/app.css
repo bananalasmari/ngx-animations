@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: linear-gradient(135deg,#FF5D36  0%, #FF5D36 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.25rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* .content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+} */
+
+.footer {
+  background: #f8f9fa;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+  color: #6c757d;
+}
+
+.footer p {
+  margin: 0;
+}
+

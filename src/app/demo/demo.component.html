@@ -1,0 +1,551 @@
+<app-sub-header></app-sub-header>
+
+<div class="demo-container">
+  
+  <!-- Mouse Follower (Optional - Premium Effect) -->
+  @if (showMouseFollower) {
+    <ngx-mouse-follower [size]="40" [dotSize]="8"></ngx-mouse-follower>
+  }
+  
+  <!-- Section 1: Basic Directives -->
+  <section class="demo-section">
+    <h2 class="section-title">Basic Animation Directives</h2>
+    
+    <div class="grid">
+      <!-- Fade In -->
+      <div class="demo-card">
+        <h3>Fade In</h3>
+        <div class="animation-box" 
+             ngxFadeIn 
+             [duration]="600"
+             [triggerOnScroll]="true"
+             [resetOnExit]="true"
+             (animationStart)="onAnimationStart()"
+             (animationEnd)="onAnimationEnd()">
+          Fade Animation
+        </div>
+        <code>&lt;div ngxFadeIn&gt;</code>
+      </div>
+
+      <!-- Slide In -->
+      <div class="demo-card">
+        <h3>Slide In</h3>
+        <div class="animation-box" 
+             ngxSlideIn 
+             direction="left"
+             [duration]="600"
+             [triggerOnScroll]="true"
+             [resetOnExit]="true">
+          Slide from Left
+        </div>
+        <code>&lt;div ngxSlideIn direction="left"&gt;</code>
+      </div>
+
+      <!-- Scale In -->
+      <div class="demo-card">
+        <h3>Scale In</h3>
+        <div class="animation-box" 
+             ngxScaleIn 
+             [startScale]="0.5"
+             [duration]="600"
+             [triggerOnScroll]="true"
+             [resetOnExit]="true">
+          Scale Animation
+        </div>
+        <code>&lt;div ngxScaleIn&gt;</code>
+      </div>
+
+      <!-- Rotate In -->
+      <div class="demo-card">
+        <h3>Rotate In</h3>
+        <div class="animation-box" 
+             ngxRotateIn 
+             axis="y"
+             [degrees]="90"
+             [duration]="600"
+             [triggerOnScroll]="true"
+             [resetOnExit]="true">
+          Rotate on Y-axis
+        </div>
+        <code>&lt;div ngxRotateIn axis="y"&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Scroll Animations -->
+  <section class="demo-section">
+    <h2 class="section-title">Scroll-Based Animations</h2>
+    
+    <div class="grid">
+      <!-- Scroll Reveal -->
+      <div class="demo-card">
+        <h3>Scroll Reveal</h3>
+        <ngx-scroll-reveal 
+          animation="slide-up" 
+          [duration]="600"
+          [once]="false"
+          (revealed)="onRevealed()">
+          <div class="animation-box">
+            Reveals on Scroll
+          </div>
+        </ngx-scroll-reveal>
+        <code>&lt;ngx-scroll-reveal animation="slide-up"&gt;</code>
+      </div>
+
+      <!-- Parallax -->
+      <div class="demo-card">
+        <h3>Parallax Scroll</h3>
+        <div class="parallax-container">
+          <div class="animation-box" 
+               ngxParallaxScroll 
+               [speed]="0.5">
+            Parallax Effect
+          </div>
+        </div>
+        <code>&lt;div ngxParallaxScroll [speed]="0.5"&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Stagger List -->
+  <section class="demo-section">
+    <h2 class="section-title">Stagger List Animation</h2>
+    
+    <div class="demo-card wide">
+      <h3>Staggered List</h3>
+      <ngx-stagger-list 
+        animation="slide-up" 
+        [staggerDelay]="100"
+        [triggerOnScroll]="true">
+        @for (item of listItems; track item) {
+          <div class="list-item">{{ item }}</div>
+        }
+      </ngx-stagger-list>
+      <code>&lt;ngx-stagger-list animation="slide-up"&gt;</code>
+    </div>
+  </section>
+
+  <!-- Section 4: Typewriter -->
+  <section class="demo-section">
+    <h2 class="section-title">Typewriter Effect</h2>
+    
+    <div class="grid">
+      <!-- English Typewriter -->
+      <div class="demo-card">
+        <h3>English Typewriter</h3>
+        <div class="typewriter-box">
+          <ngx-typewriter 
+            [text]="typewriterText"
+            [speed]="50"
+            [showCursor]="true"
+            (typingComplete)="onTypingComplete()">
+          </ngx-typewriter>
+        </div>
+        <code>&lt;ngx-typewriter [text]="text"&gt;</code>
+      </div>
+
+      <!-- Arabic Typewriter (RTL) -->
+      <div class="demo-card">
+        <h3>Arabic Typewriter (RTL)</h3>
+        <div class="typewriter-box">
+          <ngx-typewriter 
+            [text]="arabicText"
+            [speed]="50"
+            [rtl]="true"
+            [showCursor]="true">
+          </ngx-typewriter>
+        </div>
+        <code>&lt;ngx-typewriter [rtl]="true"&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Ripple Effect -->
+  <section class="demo-section">
+    <h2 class="section-title">Ripple Click Effect</h2>
+    
+    <div class="grid">
+      <div class="demo-card">
+        <h3>Primary Button</h3>
+        <button 
+          class="demo-button primary"
+          ngxRippleClick
+          [rippleColor]="'rgba(255, 255, 255, 0.5)'">
+          Click Me!
+        </button>
+        <code>&lt;button ngxRippleClick&gt;</code>
+      </div>
+
+      <div class="demo-card">
+        <h3>Secondary Button</h3>
+        <button 
+          class="demo-button secondary"
+          ngxRippleClick
+          [rippleColor]="'rgba(0, 0, 0, 0.2)'">
+          Click Me Too!
+        </button>
+        <code>&lt;button ngxRippleClick&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Scrollable Stacked Cards -->
+  <section class="demo-section">
+    <h2 class="section-title">Scrollable Stacked Cards</h2>
+    <p class="section-subtitle">
+      Layered, scrollable cards using <code>ngxParallaxScroll</code> + <code>ngxFadeIn</code>.
+    </p>
+
+    <div class="stacked-cards-container">
+      @for (card of stackedCards; track card.id; let i = $index) {
+        <div
+          class="stacked-card-wrapper"
+          ngxParallaxScroll
+          [speed]="0.15 + i * 0.08"
+          [reverse]="false"
+        >
+          <article
+            class="stacked-card"
+            [class.expanded]="expandedStackedCardId === card.id"
+            [style.zIndex]="100 - i"
+            (click)="toggleStackedCard(card.id)"
+          >
+            <div class="stacked-card-media" aria-hidden="true">
+              <div class="stacked-card-image"></div>
+            </div>
+
+            <div class="stacked-card-body" ngxFadeIn [triggerOnScroll]="true" [duration]="600">
+              <h3 class="stacked-card-title">{{ card.title }}</h3>
+              <p class="stacked-card-description">
+                {{ card.description }}
+              </p>
+
+              <div class="stacked-card-footer">
+                <button
+                  class="stacked-card-cta"
+                  type="button"
+                  ngxRippleClick
+                  (click)="$event.stopPropagation()"
+                >
+                  {{ card.cta }}
+                </button>
+                <span class="stacked-card-hint">
+                  {{ expandedStackedCardId === card.id ? 'Tap to collapse' : 'Tap card to expand' }}
+                </span>
+              </div>
+
+              @if (expandedStackedCardId === card.id) {
+                <div class="stacked-card-details">
+                  <p>
+                    This card expands smoothly on tap/click to reveal additional details. Use this
+                    pattern for product stories, feature walkthroughs, or onboarding flows. All
+                    animations rely on transforms and opacity for maximum performance.
+                  </p>
+                </div>
+              }
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Section 8: Timeline Service -->
+  <section class="demo-section">
+    <h2 class="section-title">Timeline Service</h2>
+    
+    <div class="demo-card wide">
+      <h3>Chained Animations (GSAP-like)</h3>
+      <div class="timeline-demo">
+        <div #timelineBox1 class="timeline-box">Box 1</div>
+        <div #timelineBox2 class="timeline-box">Box 2</div>
+        <div #timelineBox3 class="timeline-box">Box 3</div>
+      </div>
+      <p class="info-text">Watch the boxes animate in sequence!</p>
+      <code>timeline.to(el1, props, 500).to(el2, props, 500).play()</code>
+    </div>
+  </section>
+
+  <!-- Section 9: Cards with Scroll Reveal -->
+
+
+  <!-- Section 10: Glass Effect Cards -->
+  <section class="demo-section">
+    <h2 class="section-title">Glass Effect Cards</h2>
+
+    <div class="grid">
+      @for (card of glassCards; track card.id) {
+        <ngx-glass-card
+          ngxHoverLift
+          [liftScale]="1.05"
+          [shadowStrength]="0.35"
+          [hover]="true"
+          [elevated]="true"
+          [accent]="card.id === 1"
+        >
+          <h3>{{ card.label }}</h3>
+          <p>{{ card.text }}</p>
+        </ngx-glass-card>
+      }
+    </div>
+  </section>
+
+  <!-- Section 10.1: Glass Text Animations -->
+  <section class="demo-section">
+    <h2 class="section-title">Glass Text Animations</h2>
+
+    <div class="grid">
+      <ngx-glass-card
+        class="glass-text-card"
+        ngxFadeIn
+        [duration]="700"
+        [triggerOnScroll]="true">
+        <h3 class="glass-heading">Next-Level Glass UI</h3>
+        <p class="glass-subtitle">
+          Animated gradient text inside a frosted glass block.
+        </p>
+      </ngx-glass-card>
+
+      <ngx-glass-card
+        class="glass-text-card"
+        ngxSlideIn
+        direction="right"
+        [duration]="700"
+        [triggerOnScroll]="true">
+        <h3 class="glass-heading glass-heading-pulse">نص عربي متوهج</h3>
+        <p class="glass-subtitle">
+          نص عربي متحرك داخل بطاقة زجاجية أنيقة.
+        </p>
+      </ngx-glass-card>
+    </div>
+  </section>
+
+  <!-- Section 10: NEW - Bounce & Flip Animations -->
+  <section class="demo-section">
+    <h2 class="section-title">🎪 Bounce & Flip Animations</h2>
+    
+    <div class="grid">
+      <!-- Bounce In -->
+      <div class="demo-card">
+        <h3>Bounce In</h3>
+        <div class="animation-box" 
+             ngxBounceIn 
+             direction="up"
+             [duration]="800"
+             [triggerOnScroll]="true">
+          Bouncy Entrance! 🎈
+        </div>
+        <code>&lt;div ngxBounceIn direction="up"&gt;</code>
+      </div>
+
+      <!-- Flip In -->
+      <div class="demo-card">
+        <h3>3D Flip</h3>
+        <div class="animation-box" 
+             ngxFlipIn 
+             axis="horizontal"
+             [duration]="600"
+             [triggerOnScroll]="true">
+          Flip Card! 🃏
+        </div>
+        <code>&lt;div ngxFlipIn axis="horizontal"&gt;</code>
+      </div>
+
+      <!-- Zoom Bounce -->
+      <div class="demo-card">
+        <h3>Zoom Bounce</h3>
+        <div class="animation-box" 
+             ngxZoomIn 
+             style="bounce"
+             [intensity]="1.3"
+             [triggerOnScroll]="true">
+          Zoom with Bounce! 💥
+        </div>
+        <code>&lt;div ngxZoomIn style="bounce"&gt;</code>
+      </div>
+
+      <!-- Zoom Elastic -->
+      <div class="demo-card">
+        <h3>Zoom Elastic</h3>
+        <div class="animation-box" 
+             ngxZoomIn 
+             style="elastic"
+             [intensity]="1.4"
+             [triggerOnScroll]="true">
+          Elastic Zoom! ⚡
+        </div>
+        <code>&lt;div ngxZoomIn style="elastic"&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 11: NEW - Interactive Effects -->
+  <section class="demo-section">
+    <h2 class="section-title">✨ Interactive Effects</h2>
+    
+    <div class="grid">
+      <!-- Shake on Hover -->
+      <div class="demo-card">
+        <h3>Shake on Hover</h3>
+        <div class="animation-box interactive" 
+             ngxShake 
+             [shakeOnHover]="true"
+             intensity="medium">
+          Hover Me! 🌊
+        </div>
+        <code>&lt;div ngxShake [shakeOnHover]="true"&gt;</code>
+      </div>
+
+      <!-- Pulse Continuous -->
+      <div class="demo-card">
+        <h3>Pulse Effect</h3>
+        <div class="animation-box" 
+             ngxPulse 
+             [speed]="1000"
+             [scale]="1.08"
+             [continuous]="true">
+          Pulsing! 💓
+        </div>
+        <code>&lt;div ngxPulse [continuous]="true"&gt;</code>
+      </div>
+
+      <!-- Glitch Effect -->
+      <div class="demo-card">
+        <h3>Glitch Effect</h3>
+        <div class="animation-box glitch-box" 
+             ngxGlitch 
+             [intensity]="4"
+             [speed]="2000"
+             [continuous]="true">
+          GLITCH 🔥
+        </div>
+        <code>&lt;div ngxGlitch [intensity]="4"&gt;</code>
+      </div>
+
+      <!-- Shake on Click -->
+      <div class="demo-card">
+        <h3>Shake on Click</h3>
+        <div class="animation-box interactive" 
+             ngxShake 
+             [shakeOnClick]="true"
+             intensity="hard">
+          Click Me! 👆
+        </div>
+        <code>&lt;div ngxShake [shakeOnClick]="true"&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 12: NEW - Confetti Celebration -->
+  <section class="demo-section">
+    <h2 class="section-title">🎊 Confetti Effect</h2>
+    
+    <div class="demo-card wide">
+      <h3>Celebrate with Confetti!</h3>
+      <div class="confetti-demo">
+        <button 
+          class="demo-button primary confetti-btn"
+          ngxRippleClick
+          (click)="triggerConfetti()">
+          🎉 Launch Confetti!
+        </button>
+        @if (showConfetti) {
+          <ngx-confetti 
+            [particleCount]="150" 
+            [duration]="3000"
+            [colors]="['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500']">
+          </ngx-confetti>
+        }
+      </div>
+      <code>&lt;ngx-confetti [particleCount]="150"&gt;</code>
+    </div>
+  </section>
+
+  <!-- Section 13: GSAP-INSPIRED - Premium Effects -->
+  <section class="demo-section gsap-section">
+    <h2 class="section-title">🎯 GSAP-Inspired Premium Effects (FREE!)</h2>
+    <p class="section-subtitle">Professional animations inspired by GSAP - No library required!</p>
+    
+    <div class="grid">
+      <!-- Magnetic Effect -->
+      <div class="demo-card">
+        <h3>Magnetic Button</h3>
+        <button 
+          class="demo-button primary magnetic-btn"
+          ngxMagnetic
+          [strength]="0.5"
+          ngxRippleClick>
+          🧲 Hover Me!
+        </button>
+        <p class="effect-description">Follows your mouse like a magnet!</p>
+        <code>&lt;button ngxMagnetic [strength]="0.5"&gt;</code>
+      </div>
+
+      <!-- 3D Tilt Card -->
+      <div class="demo-card">
+        <h3>3D Tilt Card</h3>
+        <div 
+          class="tilt-card"
+          ngxTilt3d
+          [maxTilt]="15"
+          [perspective]="1000"
+          [scale]="1.05"
+          [glare]="true">
+          <div class="card-content">
+            <h4>3D Effect</h4>
+            <p>Move mouse over me!</p>
+          </div>
+        </div>
+        <code>&lt;div ngxTilt3d [glare]="true"&gt;</code>
+      </div>
+
+      <!-- Text Scramble -->
+      <div class="demo-card">
+        <h3>Text Scramble</h3>
+        <div class="scramble-box">
+          <ngx-text-scramble 
+            [text]="scrambleTexts[currentScrambleIndex]"
+            [speed]="30"
+            customClass="scramble-text">
+          </ngx-text-scramble>
+        </div>
+        <p class="effect-description">Matrix-style text decoding!</p>
+        <code>&lt;ngx-text-scramble [text]="text"&gt;</code>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Section 14: RTL Support Demo -->
+  <section class="demo-section">
+    <h2 class="section-title">RTL Support</h2>
+    
+    <div class="grid">
+      <div class="demo-card">
+        <h3>LTR Animation</h3>
+        <div class="animation-box" 
+             ngxSlideIn 
+             direction="left"
+             [duration]="600"
+             [triggerOnScroll]="true">
+          Slides from Left →
+        </div>
+      </div>
+
+      <div class="demo-card rtl-demo">
+        <h3>RTL Animation</h3>
+        <div class="animation-box" 
+             ngxSlideIn 
+             direction="left"
+             [rtl]="true"
+             [duration]="600"
+             [triggerOnScroll]="true">
+          يتحرك من اليمين ←
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+

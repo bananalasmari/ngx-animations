@@ -1,0 +1,157 @@
+<app-sub-header></app-sub-header>
+<section id="ai-assistant" class="demo-container ai-section">
+  <header class="ai-header">
+    <div class="ai-title">
+      <span class="ai-pill">AI</span>
+      <h2>AI-Powered Assistance</h2>
+    </div>
+    <svg  class="ai-hero-icon" xmlns="http://www.w3.org/2000/svg" width="214" height="253" viewBox="0 0 214 253" fill="none">
+      <g clip-path="url(#clip0_84_444)">
+        <path d="M213.02 81.33V94.21L149.09 131.06L77.9701 172.05L52.6301 157.09L0.680054 126.42V113.54L36.8701 92.68L134.78 36.23L154.62 47.67L213.02 81.33Z" stroke="#FF5D36" stroke-width="1.3" stroke-miterlimit="10"/>
+        <path d="M101.26 0.75L0.650024 58.7V71.59L36.87 92.68L56.56 104.14L154.62 47.67L157.19 46.19V33.31L101.26 0.75Z" stroke="#0071CE" stroke-width="1.3" stroke-miterlimit="10"/>
+        <path d="M212.99 167.89V180.78L90.0801 251.32L0.680054 199.79V186.9L52.6301 157.09L123.59 116.36L149.09 131.06L212.99 167.89Z" stroke="#763CBC" stroke-width="1.3" stroke-miterlimit="10"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_84_444">
+          <rect width="213.67" height="252.07" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+  
+  </header>
+
+  <div class="ai-grid">
+    <article class="ai-card">
+      <h3>What this library does</h3>
+      <p>
+        <strong>elm-ngx-animations</strong> is a standalone Angular animation library with
+        directives and components for fades, slides, scales, rotations, scroll reveals, timelines,
+        glass cards, and more – all optimized for performance and RTL support.
+      </p>
+      <p>
+        Pair it with an AI assistant (ChatGPT, Claude, Copilot, etc.) to generate code snippets,
+        refactor existing motion, and explore advanced interaction patterns just by describing what
+        you want.
+      </p>
+    </article>
+
+    <!-- Individual copyable prompts -->
+    <article class="ai-card ai-prompt-card">
+      <div class="ai-prompt-header">
+        <h3>Fade-in on scroll (ngxFadeIn)</h3>
+        <button
+          type="button"
+          class="ai-copy-btn"
+          (click)="copyPrompt(promptFadeOnScroll, 'fade')"
+          aria-label="Copy fade-in on scroll prompt"
+        >
+          <svg
+            class="ai-copy-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="9" y="9" width="11" height="11" rx="2" ry="2"></rect>
+            <rect x="4" y="4" width="11" height="11" rx="2" ry="2"></rect>
+          </svg>
+        </button>
+      </div>
+      <p class="ai-prompt-description">
+        Copy this prompt to get a full Angular standalone component example:
+      </p>
+      <pre><code [innerText]="promptFadeOnScroll"></code></pre>
+      @if (copiedKey === 'fade') {
+        <p class="ai-copy-success">Prompt copied!</p>
+      }
+    </article>
+
+    <article class="ai-card ai-prompt-card">
+      <div class="ai-prompt-header">
+        <h3>Bouncing + flipping card (ngxBounceIn + ngxRotateIn)</h3>
+        <button
+          type="button"
+          class="ai-copy-btn"
+          (click)="copyPrompt(promptBounceRotate, 'bounceRotate')"
+          aria-label="Copy bouncing + flipping card prompt"
+        >
+          <svg
+            class="ai-copy-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="9" y="9" width="11" height="11" rx="2" ry="2"></rect>
+            <rect x="4" y="4" width="11" height="11" rx="2" ry="2"></rect>
+          </svg>
+        </button>
+      </div>
+      <p class="ai-prompt-description">
+        Ask your LLM to build a combined bouncing + flipping hover effect:
+      </p>
+      <pre><code [innerText]="promptBounceRotate"></code></pre>
+      @if (copiedKey === 'bounceRotate') {
+        <p class="ai-copy-success">Prompt copied!</p>
+      }
+    </article>
+
+    <article class="ai-card ai-prompt-card">
+      <div class="ai-prompt-header">
+        <h3>Performance best practices (Parallax + ScrollReveal)</h3>
+        <button
+          type="button"
+          class="ai-copy-btn"
+          (click)="copyPrompt(promptPerfBestPractices, 'perf')"
+          aria-label="Copy performance best practices prompt"
+        >
+          <svg
+            class="ai-copy-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="9" y="9" width="11" height="11" rx="2" ry="2"></rect>
+            <rect x="4" y="4" width="11" height="11" rx="2" ry="2"></rect>
+          </svg>
+        </button>
+      </div>
+      <p class="ai-prompt-description">
+        Use this prompt when you want performance and accessibility guidance:
+      </p>
+      <pre><code [innerText]="promptPerfBestPractices"></code></pre>
+      @if (copiedKey === 'perf') {
+        <p class="ai-copy-success">Prompt copied!</p>
+      }
+    </article>
+
+    <article class="ai-card ai-prompt-card">
+      <div class="ai-prompt-header">
+        <h3>Slide-in on user interaction (ngxSlideIn)</h3>
+        <button
+          type="button"
+          class="ai-copy-btn"
+          (click)="copyPrompt(promptSlideOnClick, 'slide')"
+          aria-label="Copy slide-in on click prompt"
+        >
+          <svg
+            class="ai-copy-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="9" y="9" width="11" height="11" rx="2" ry="2"></rect>
+            <rect x="4" y="4" width="11" height="11" rx="2" ry="2"></rect>
+          </svg>
+        </button>
+      </div>
+      <p class="ai-prompt-description">
+        Copy this when you want click- or interaction-driven slide animations:
+      </p>
+      <pre><code [innerText]="promptSlideOnClick"></code></pre>
+      @if (copiedKey === 'slide') {
+        <p class="ai-copy-success">Prompt copied!</p>
+      }
+    </article>
+  </div>
+</section>
+
+
