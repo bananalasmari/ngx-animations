@@ -16,6 +16,12 @@
 - 🔧 **Highly Customizable** - Extensive inputs for every animation
 - 🪶 **Lightweight** - Zero dependencies, tree-shakeable
 
+## 🎬 Live Demo
+
+Explore the full demo application showcasing all directives, components, and the timeline service:
+
+**Live Demo**: [ngx-animations on Vercel](https://ngx-animations-1d6mb6ca4-bananalasmaris-projects.vercel.app/)
+
 ## 📦 Installation
 
 ```bash

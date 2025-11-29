@@ -1,6 +1,6 @@
 {
   "name": "elm-ngx-animations",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Next-level animation library for Angular - Production-ready, lightweight, high-performance",
   "keywords": [
     "angular",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ngx-animations.git"
+    "url": "git+https://github.com/yourusername/ngx-animations.git"
   },
   "bugs": {
     "url": "https://github.com/yourusername/ngx-animations/issues"
