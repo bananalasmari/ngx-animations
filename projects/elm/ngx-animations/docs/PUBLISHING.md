@@ -32,7 +32,7 @@ Ensure all fields are correct:
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ngx-animations.git"
+    "url": "https://github.com/bananalasmari/ngx-animations.git"
   }
 }
 ```

@@ -109,7 +109,7 @@ Before publishing, update these files:
   "author": "Your Name <your.email@example.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOURUSERNAME/ngx-animations.git"
+    "url": "https://github.com/bananalasmari/ngx-animations.git"
   }
 }
 ```
