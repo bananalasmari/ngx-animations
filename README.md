@@ -194,6 +194,8 @@ export class AnimationDemo {
 
 This project includes a comprehensive demo application showcasing all components and directives.
 
+**Live Demo**: [ngx-animations on Vercel](https://ngx-animations-1d6mb6ca4-bananalasmaris-projects.vercel.app/)
+
 ### Run the Demo
 
 ```bash
